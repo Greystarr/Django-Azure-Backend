@@ -10,11 +10,11 @@ from .serializers import PollSerializer
 
 
 
-subscriptionId= "fc97f7be-f34a-4094-b8fc-fce48e4aad59"
-displayName= "azure-cli-2022-02-19-12-20-04"
-password="62x2-LWQAxqZTl_RE6a.N1-PPZxQylU9AK"
-tenant="248beea9-a793-47c7-abd9-013c00c51146"
-client_id="77721f01-75eb-4704-bcbc-e00d38889dcb"
+subscriptionId= "fXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+displayName= "azure-cliXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+password="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+tenant="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+client_id="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 
 def index(request):
@@ -37,7 +37,7 @@ def getRG(request):
     
     url= 'https://management.azure.com/subscriptions/%s/resourcegroups?api-version=2021-04-01' %subscriptionId
     headers ={
-    "tenant": "248beea9-a793-47c7-abd9-013c00c51146",
+    "tenant": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "Authorization" : "Bearer "+secret,
     "Content-Type" : "application/json"  
     
@@ -48,9 +48,9 @@ def getRG(request):
 def getResource(request):
     secret=getSecret(request)["access_token"]
     
-    url= 'https://management.azure.com/subscriptions/fc97f7be-f34a-4094-b8fc-fce48e4aad59/resources?api-version=2021-04-01'
+    url= 'https://management.azure.com/subscriptions/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/resources?api-version=2021-04-01'
     headers ={
-    "tenant": "248beea9-a793-47c7-abd9-013c00c51146",
+    "tenant": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "Authorization" : "Bearer "+secret,
     "Content-Type" : "application/json"  
     
@@ -69,14 +69,13 @@ def getSecret(request):
     }
     response=requests.post('https://login.microsoftonline.com/'+tenant+'/oauth2/token', data=data)
     return (response.json())
-#pass Io17Q~vmoCjmZEG1Q3ND4nWbIq.JH6irQfD9i
 
 def billing(request):
     secret=getSecret(request)["access_token"]
     
     url= 'https://management.azure.com/subscriptions/%s/providers/Microsoft.CostManagement/query?api-version=2021-10-01' %subscriptionId
     headers ={
-    "tenant": "248beea9-a793-47c7-abd9-013c00c51146",
+    "tenant": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "Authorization" : "Bearer "+secret,
     "Content-Type" : "application/json"  
     
